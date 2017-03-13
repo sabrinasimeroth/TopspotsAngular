@@ -18,13 +18,13 @@
       <tr ng-repeat="x in hmCtrl.info">
         <td>{{ x.name }}</td>
         <td>{{ x.description }}</td>
-        <td>{{ x.location }}</td>
+        <td><a href="https://www.google.com/maps/place/?q={{ x.location.join() }}"> {{ x.location }} </a></td>
       </tr>
     </table>
   </div>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-<script src="scripts/HomeController.js"></script>
-<script type="text/javascript" src="scripts/topspotsangular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="app/HomeController.js"></script>
+<script type="text/javascript" src="app/topspotsangular.js"></script>
 </body>
 </html>
