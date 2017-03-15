@@ -4,27 +4,41 @@
   <meta charset="UTF-8">
   <title>San Diego Top Spots</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+  <link rel="stylesheet" type="text/css" href="app/topspots.css">
 </head>
 <body ng-app="tsApp">
 
   <div ng-controller="HomeController as hmCtrl">
-    <table>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Link</th>
-      </tr>
-      <tr ng-repeat="x in hmCtrl.info">
-        <td>{{ x.name }}</td>
-        <td>{{ x.description }}</td>
-        <td><a href="https://www.google.com/maps/place/?q={{ x.location.join() }}"> {{ x.location }} </a></td>
-      </tr>
-    </table>
+    <div class="jumbotron">
+      <div class="container-fluid">
+        <h1>Explore San Diego</h1>
+      </div>
+    </div>
+    <div id="container">
+      <div class="panel panel-default">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="x in hmCtrl.info" >
+              <td>{{ x.name }}</td>
+              <td>{{ x.description }}</td>
+              <td><a class="btn btn-primary" href="https://www.google.com/maps/place/?q={{ x.location.join() }}" role="button"> See Map </a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-<script src="app/HomeController.js"></script>
-<script type="text/javascript" src="app/topspotsangular.js"></script>
+<script src="app/topspots.module.js"></script>
+<script type="text/javascript" src="app/topspots.controller.js"></script>
 </body>
 </html>
