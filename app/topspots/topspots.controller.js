@@ -5,7 +5,7 @@ angular
   function HomeController($http){
     var vm = this;
 
-    $http.get('https://raw.githubusercontent.com/OriginCodeAcademy/Cohort10/master/Projects/04-SanDiegoTopSpots/topspots.json')
+    $http.get('http://localhost:50878/api/topspots')
       .then(function(response){
         vm.info = response.data;
 
